@@ -1,0 +1,966 @@
+
+        body {
+            font-family: 'Inter', sans-serif;
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+
+        /* Theme design tokens */
+        :root {
+            --color-primary-50: #eff6ff;
+            --color-primary-100: #dbeafe;
+            --color-primary-200: #bfdbfe;
+            --color-primary-300: #93c5fd;
+            --color-primary-400: #60a5fa;
+            --color-primary-500: #3b82f6;
+            --color-primary-600: #2563eb;
+            --color-primary-700: #1d4ed8;
+            --color-primary-800: #1e40af;
+            --color-primary-900: #1e3a8a;
+            --color-primary-950: #172554;
+            --color-primary-50-rgb: 239, 246, 255;
+            --color-primary-100-rgb: 219, 234, 254;
+            --color-primary-200-rgb: 191, 219, 254;
+            --color-primary-300-rgb: 147, 197, 253;
+            --color-primary-400-rgb: 96, 165, 250;
+            --color-primary-500-rgb: 59, 130, 246;
+            --color-primary-600-rgb: 37, 99, 235;
+            --color-primary-700-rgb: 29, 78, 216;
+            --color-primary-800-rgb: 30, 64, 175;
+            --color-primary-900-rgb: 30, 58, 138;
+            --color-primary-950-rgb: 23, 37, 84;
+            --color-secondary-50: #f0fdf4;
+            --color-secondary-100: #dcfce7;
+            --color-secondary-200: #bbf7d0;
+            --color-secondary-300: #86efac;
+            --color-secondary-400: #4ade80;
+            --color-secondary-500: #22c55e;
+            --color-secondary-600: #16a34a;
+            --color-secondary-700: #15803d;
+            --color-secondary-800: #166534;
+            --color-secondary-900: #14532d;
+            --color-secondary-950: #052e16;
+            --color-secondary-50-rgb: 240, 253, 244;
+            --color-secondary-100-rgb: 220, 252, 231;
+            --color-secondary-200-rgb: 187, 247, 208;
+            --color-secondary-300-rgb: 134, 239, 172;
+            --color-secondary-400-rgb: 74, 222, 128;
+            --color-secondary-500-rgb: 34, 197, 94;
+            --color-secondary-600-rgb: 22, 163, 74;
+            --color-secondary-700-rgb: 21, 128, 61;
+            --color-secondary-800-rgb: 22, 101, 52;
+            --color-secondary-900-rgb: 20, 83, 45;
+            --color-secondary-950-rgb: 5, 46, 22;
+            --color-accent-50: #fdf4ff;
+            --color-accent-100: #fae8ff;
+            --color-accent-200: #f5d0fe;
+            --color-accent-300: #f0abfc;
+            --color-accent-400: #e879f9;
+            --color-accent-500: #d946ef;
+            --color-accent-600: #c026d3;
+            --color-accent-700: #a21caf;
+            --color-accent-800: #86198f;
+            --color-accent-900: #701a75;
+            --color-accent-950: #4a044e;
+            --color-accent-50-rgb: 253, 244, 255;
+            --color-accent-100-rgb: 250, 232, 255;
+            --color-accent-200-rgb: 245, 208, 254;
+            --color-accent-300-rgb: 240, 171, 252;
+            --color-accent-400-rgb: 232, 121, 249;
+            --color-accent-500-rgb: 217, 70, 239;
+            --color-accent-600-rgb: 192, 38, 211;
+            --color-accent-700-rgb: 162, 28, 175;
+            --color-accent-800-rgb: 134, 25, 143;
+            --color-accent-900-rgb: 112, 26, 117;
+            --color-accent-950-rgb: 74, 4, 78;
+            --gradient-primary-from: #2563eb;
+            --gradient-primary-to: #0ea5e9;
+
+            --color-warning: #f59e0b;
+            --color-success: #10b981;
+            --color-error: #ef4444;
+            --color-text-primary: #111827;
+            --color-text-secondary: #6b7280;
+            --color-text-light: #9ca3af;
+            --color-bg-primary: #ffffff;
+            --color-bg-secondary: #f9fafb;
+            --color-border: #e5e7eb;
+        }
+
+        body[data-theme='ocean'] {
+            --color-primary-50: #eff6ff;
+            --color-primary-100: #dbeafe;
+            --color-primary-200: #bfdbfe;
+            --color-primary-300: #93c5fd;
+            --color-primary-400: #60a5fa;
+            --color-primary-500: #3b82f6;
+            --color-primary-600: #2563eb;
+            --color-primary-700: #1d4ed8;
+            --color-primary-800: #1e40af;
+            --color-primary-900: #1e3a8a;
+            --color-primary-950: #172554;
+            --color-primary-50-rgb: 239, 246, 255;
+            --color-primary-100-rgb: 219, 234, 254;
+            --color-primary-200-rgb: 191, 219, 254;
+            --color-primary-300-rgb: 147, 197, 253;
+            --color-primary-400-rgb: 96, 165, 250;
+            --color-primary-500-rgb: 59, 130, 246;
+            --color-primary-600-rgb: 37, 99, 235;
+            --color-primary-700-rgb: 29, 78, 216;
+            --color-primary-800-rgb: 30, 64, 175;
+            --color-primary-900-rgb: 30, 58, 138;
+            --color-primary-950-rgb: 23, 37, 84;
+            --color-secondary-50: #f0fdf4;
+            --color-secondary-100: #dcfce7;
+            --color-secondary-200: #bbf7d0;
+            --color-secondary-300: #86efac;
+            --color-secondary-400: #4ade80;
+            --color-secondary-500: #22c55e;
+            --color-secondary-600: #16a34a;
+            --color-secondary-700: #15803d;
+            --color-secondary-800: #166534;
+            --color-secondary-900: #14532d;
+            --color-secondary-950: #052e16;
+            --color-secondary-50-rgb: 240, 253, 244;
+            --color-secondary-100-rgb: 220, 252, 231;
+            --color-secondary-200-rgb: 187, 247, 208;
+            --color-secondary-300-rgb: 134, 239, 172;
+            --color-secondary-400-rgb: 74, 222, 128;
+            --color-secondary-500-rgb: 34, 197, 94;
+            --color-secondary-600-rgb: 22, 163, 74;
+            --color-secondary-700-rgb: 21, 128, 61;
+            --color-secondary-800-rgb: 22, 101, 52;
+            --color-secondary-900-rgb: 20, 83, 45;
+            --color-secondary-950-rgb: 5, 46, 22;
+            --color-accent-50: #fdf4ff;
+            --color-accent-100: #fae8ff;
+            --color-accent-200: #f5d0fe;
+            --color-accent-300: #f0abfc;
+            --color-accent-400: #e879f9;
+            --color-accent-500: #d946ef;
+            --color-accent-600: #c026d3;
+            --color-accent-700: #a21caf;
+            --color-accent-800: #86198f;
+            --color-accent-900: #701a75;
+            --color-accent-950: #4a044e;
+            --color-accent-50-rgb: 253, 244, 255;
+            --color-accent-100-rgb: 250, 232, 255;
+            --color-accent-200-rgb: 245, 208, 254;
+            --color-accent-300-rgb: 240, 171, 252;
+            --color-accent-400-rgb: 232, 121, 249;
+            --color-accent-500-rgb: 217, 70, 239;
+            --color-accent-600-rgb: 192, 38, 211;
+            --color-accent-700-rgb: 162, 28, 175;
+            --color-accent-800-rgb: 134, 25, 143;
+            --color-accent-900-rgb: 112, 26, 117;
+            --color-accent-950-rgb: 74, 4, 78;
+            --gradient-primary-from: #2563eb;
+            --gradient-primary-to: #0ea5e9;
+        }
+
+        body[data-theme='sunset'] {
+            --color-primary-50: #fff7ed;
+            --color-primary-100: #ffedd5;
+            --color-primary-200: #fed7aa;
+            --color-primary-300: #fdba74;
+            --color-primary-400: #fb923c;
+            --color-primary-500: #f97316;
+            --color-primary-600: #ea580c;
+            --color-primary-700: #c2410c;
+            --color-primary-800: #9a3412;
+            --color-primary-900: #7c2d12;
+            --color-primary-950: #431407;
+            --color-primary-50-rgb: 255, 247, 237;
+            --color-primary-100-rgb: 255, 237, 213;
+            --color-primary-200-rgb: 254, 215, 170;
+            --color-primary-300-rgb: 253, 186, 116;
+            --color-primary-400-rgb: 251, 146, 60;
+            --color-primary-500-rgb: 249, 115, 22;
+            --color-primary-600-rgb: 234, 88, 12;
+            --color-primary-700-rgb: 194, 65, 12;
+            --color-primary-800-rgb: 154, 52, 18;
+            --color-primary-900-rgb: 124, 45, 18;
+            --color-primary-950-rgb: 67, 20, 7;
+            --color-secondary-50: #fffbeb;
+            --color-secondary-100: #fef3c7;
+            --color-secondary-200: #fde68a;
+            --color-secondary-300: #fcd34d;
+            --color-secondary-400: #fbbf24;
+            --color-secondary-500: #f59e0b;
+            --color-secondary-600: #d97706;
+            --color-secondary-700: #b45309;
+            --color-secondary-800: #92400e;
+            --color-secondary-900: #78350f;
+            --color-secondary-950: #451a03;
+            --color-secondary-50-rgb: 255, 251, 235;
+            --color-secondary-100-rgb: 254, 243, 199;
+            --color-secondary-200-rgb: 253, 230, 138;
+            --color-secondary-300-rgb: 252, 211, 77;
+            --color-secondary-400-rgb: 251, 191, 36;
+            --color-secondary-500-rgb: 245, 158, 11;
+            --color-secondary-600-rgb: 217, 119, 6;
+            --color-secondary-700-rgb: 180, 83, 9;
+            --color-secondary-800-rgb: 146, 64, 14;
+            --color-secondary-900-rgb: 120, 53, 15;
+            --color-secondary-950-rgb: 69, 26, 3;
+            --color-accent-50: #fdf2f8;
+            --color-accent-100: #fce7f3;
+            --color-accent-200: #fbcfe8;
+            --color-accent-300: #f9a8d4;
+            --color-accent-400: #f472b6;
+            --color-accent-500: #ec4899;
+            --color-accent-600: #db2777;
+            --color-accent-700: #be185d;
+            --color-accent-800: #9d174d;
+            --color-accent-900: #831843;
+            --color-accent-950: #500724;
+            --color-accent-50-rgb: 253, 242, 248;
+            --color-accent-100-rgb: 252, 231, 243;
+            --color-accent-200-rgb: 251, 207, 232;
+            --color-accent-300-rgb: 249, 168, 212;
+            --color-accent-400-rgb: 244, 114, 182;
+            --color-accent-500-rgb: 236, 72, 153;
+            --color-accent-600-rgb: 219, 39, 119;
+            --color-accent-700-rgb: 190, 24, 93;
+            --color-accent-800-rgb: 157, 23, 77;
+            --color-accent-900-rgb: 131, 24, 67;
+            --color-accent-950-rgb: 80, 7, 36;
+            --gradient-primary-from: #f97316;
+            --gradient-primary-to: #ec4899;
+        }
+
+        body[data-theme='forest'] {
+            --color-primary-50: #ecfdf5;
+            --color-primary-100: #d1fae5;
+            --color-primary-200: #a7f3d0;
+            --color-primary-300: #6ee7b7;
+            --color-primary-400: #34d399;
+            --color-primary-500: #10b981;
+            --color-primary-600: #059669;
+            --color-primary-700: #047857;
+            --color-primary-800: #065f46;
+            --color-primary-900: #064e3b;
+            --color-primary-950: #022c22;
+            --color-primary-50-rgb: 236, 253, 245;
+            --color-primary-100-rgb: 209, 250, 229;
+            --color-primary-200-rgb: 167, 243, 208;
+            --color-primary-300-rgb: 110, 231, 183;
+            --color-primary-400-rgb: 52, 211, 153;
+            --color-primary-500-rgb: 16, 185, 129;
+            --color-primary-600-rgb: 5, 150, 105;
+            --color-primary-700-rgb: 4, 120, 87;
+            --color-primary-800-rgb: 6, 95, 70;
+            --color-primary-900-rgb: 6, 78, 59;
+            --color-primary-950-rgb: 2, 44, 34;
+            --color-secondary-50: #f0fdfa;
+            --color-secondary-100: #ccfbf1;
+            --color-secondary-200: #99f6e4;
+            --color-secondary-300: #5eead4;
+            --color-secondary-400: #2dd4bf;
+            --color-secondary-500: #14b8a6;
+            --color-secondary-600: #0d9488;
+            --color-secondary-700: #0f766e;
+            --color-secondary-800: #115e59;
+            --color-secondary-900: #134e4a;
+            --color-secondary-950: #042f2e;
+            --color-secondary-50-rgb: 240, 253, 250;
+            --color-secondary-100-rgb: 204, 251, 241;
+            --color-secondary-200-rgb: 153, 246, 228;
+            --color-secondary-300-rgb: 94, 234, 212;
+            --color-secondary-400-rgb: 45, 212, 191;
+            --color-secondary-500-rgb: 20, 184, 166;
+            --color-secondary-600-rgb: 13, 148, 136;
+            --color-secondary-700-rgb: 15, 118, 110;
+            --color-secondary-800-rgb: 17, 94, 89;
+            --color-secondary-900-rgb: 19, 78, 74;
+            --color-secondary-950-rgb: 4, 47, 46;
+            --color-accent-50: #f7fee7;
+            --color-accent-100: #ecfccb;
+            --color-accent-200: #d9f99d;
+            --color-accent-300: #bef264;
+            --color-accent-400: #a3e635;
+            --color-accent-500: #84cc16;
+            --color-accent-600: #65a30d;
+            --color-accent-700: #4d7c0f;
+            --color-accent-800: #3f6212;
+            --color-accent-900: #365314;
+            --color-accent-950: #1a2e05;
+            --color-accent-50-rgb: 247, 254, 231;
+            --color-accent-100-rgb: 236, 252, 203;
+            --color-accent-200-rgb: 217, 249, 157;
+            --color-accent-300-rgb: 190, 242, 100;
+            --color-accent-400-rgb: 163, 230, 53;
+            --color-accent-500-rgb: 132, 204, 22;
+            --color-accent-600-rgb: 101, 163, 13;
+            --color-accent-700-rgb: 77, 124, 15;
+            --color-accent-800-rgb: 63, 98, 18;
+            --color-accent-900-rgb: 54, 83, 20;
+            --color-accent-950-rgb: 26, 46, 5;
+            --gradient-primary-from: #10b981;
+            --gradient-primary-to: #14b8a6;
+        }
+
+        body[data-theme='royal'] {
+            --color-primary-50: #f5f3ff;
+            --color-primary-100: #ede9fe;
+            --color-primary-200: #ddd6fe;
+            --color-primary-300: #c4b5fd;
+            --color-primary-400: #a78bfa;
+            --color-primary-500: #8b5cf6;
+            --color-primary-600: #7c3aed;
+            --color-primary-700: #6d28d9;
+            --color-primary-800: #5b21b6;
+            --color-primary-900: #4c1d95;
+            --color-primary-950: #2e1065;
+            --color-primary-50-rgb: 245, 243, 255;
+            --color-primary-100-rgb: 237, 233, 254;
+            --color-primary-200-rgb: 221, 214, 254;
+            --color-primary-300-rgb: 196, 181, 253;
+            --color-primary-400-rgb: 167, 139, 250;
+            --color-primary-500-rgb: 139, 92, 246;
+            --color-primary-600-rgb: 124, 58, 237;
+            --color-primary-700-rgb: 109, 40, 217;
+            --color-primary-800-rgb: 91, 33, 182;
+            --color-primary-900-rgb: 76, 29, 149;
+            --color-primary-950-rgb: 46, 16, 101;
+            --color-secondary-50: #eef2ff;
+            --color-secondary-100: #e0e7ff;
+            --color-secondary-200: #c7d2fe;
+            --color-secondary-300: #a5b4fc;
+            --color-secondary-400: #818cf8;
+            --color-secondary-500: #6366f1;
+            --color-secondary-600: #4f46e5;
+            --color-secondary-700: #4338ca;
+            --color-secondary-800: #3730a3;
+            --color-secondary-900: #312e81;
+            --color-secondary-950: #1e1b4b;
+            --color-secondary-50-rgb: 238, 242, 255;
+            --color-secondary-100-rgb: 224, 231, 255;
+            --color-secondary-200-rgb: 199, 210, 254;
+            --color-secondary-300-rgb: 165, 180, 252;
+            --color-secondary-400-rgb: 129, 140, 248;
+            --color-secondary-500-rgb: 99, 102, 241;
+            --color-secondary-600-rgb: 79, 70, 229;
+            --color-secondary-700-rgb: 67, 56, 202;
+            --color-secondary-800-rgb: 55, 48, 163;
+            --color-secondary-900-rgb: 49, 46, 129;
+            --color-secondary-950-rgb: 30, 27, 75;
+            --color-accent-50: #fdf4ff;
+            --color-accent-100: #fae8ff;
+            --color-accent-200: #f5d0fe;
+            --color-accent-300: #f0abfc;
+            --color-accent-400: #e879f9;
+            --color-accent-500: #d946ef;
+            --color-accent-600: #c026d3;
+            --color-accent-700: #a21caf;
+            --color-accent-800: #86198f;
+            --color-accent-900: #701a75;
+            --color-accent-950: #4a044e;
+            --color-accent-50-rgb: 253, 244, 255;
+            --color-accent-100-rgb: 250, 232, 255;
+            --color-accent-200-rgb: 245, 208, 254;
+            --color-accent-300-rgb: 240, 171, 252;
+            --color-accent-400-rgb: 232, 121, 249;
+            --color-accent-500-rgb: 217, 70, 239;
+            --color-accent-600-rgb: 192, 38, 211;
+            --color-accent-700-rgb: 162, 28, 175;
+            --color-accent-800-rgb: 134, 25, 143;
+            --color-accent-900-rgb: 112, 26, 117;
+            --color-accent-950-rgb: 74, 4, 78;
+            --gradient-primary-from: #7c3aed;
+            --gradient-primary-to: #f472b6;
+        }
+
+        body[data-theme='aurora'] {
+            --color-primary-50: #ecfeff;
+            --color-primary-100: #cffafe;
+            --color-primary-200: #a5f3fc;
+            --color-primary-300: #67e8f9;
+            --color-primary-400: #22d3ee;
+            --color-primary-500: #06b6d4;
+            --color-primary-600: #0891b2;
+            --color-primary-700: #0e7490;
+            --color-primary-800: #155e75;
+            --color-primary-900: #164e63;
+            --color-primary-950: #083344;
+            --color-primary-50-rgb: 236, 254, 255;
+            --color-primary-100-rgb: 207, 250, 254;
+            --color-primary-200-rgb: 165, 243, 252;
+            --color-primary-300-rgb: 103, 232, 249;
+            --color-primary-400-rgb: 34, 211, 238;
+            --color-primary-500-rgb: 6, 182, 212;
+            --color-primary-600-rgb: 8, 145, 178;
+            --color-primary-700-rgb: 14, 116, 144;
+            --color-primary-800-rgb: 21, 94, 117;
+            --color-primary-900-rgb: 22, 78, 99;
+            --color-primary-950-rgb: 8, 51, 68;
+            --color-secondary-50: #f0f9ff;
+            --color-secondary-100: #e0f2fe;
+            --color-secondary-200: #bae6fd;
+            --color-secondary-300: #7dd3fc;
+            --color-secondary-400: #38bdf8;
+            --color-secondary-500: #0ea5e9;
+            --color-secondary-600: #0284c7;
+            --color-secondary-700: #0369a1;
+            --color-secondary-800: #075985;
+            --color-secondary-900: #0c4a6e;
+            --color-secondary-950: #082f49;
+            --color-secondary-50-rgb: 240, 249, 255;
+            --color-secondary-100-rgb: 224, 242, 254;
+            --color-secondary-200-rgb: 186, 230, 253;
+            --color-secondary-300-rgb: 125, 211, 252;
+            --color-secondary-400-rgb: 56, 189, 248;
+            --color-secondary-500-rgb: 14, 165, 233;
+            --color-secondary-600-rgb: 2, 132, 199;
+            --color-secondary-700-rgb: 3, 105, 161;
+            --color-secondary-800-rgb: 7, 89, 133;
+            --color-secondary-900-rgb: 12, 74, 110;
+            --color-secondary-950-rgb: 8, 47, 73;
+            --color-accent-50: #f5f3ff;
+            --color-accent-100: #ede9fe;
+            --color-accent-200: #ddd6fe;
+            --color-accent-300: #c4b5fd;
+            --color-accent-400: #a78bfa;
+            --color-accent-500: #8b5cf6;
+            --color-accent-600: #7c3aed;
+            --color-accent-700: #6d28d9;
+            --color-accent-800: #5b21b6;
+            --color-accent-900: #4c1d95;
+            --color-accent-950: #2e1065;
+            --color-accent-50-rgb: 245, 243, 255;
+            --color-accent-100-rgb: 237, 233, 254;
+            --color-accent-200-rgb: 221, 214, 254;
+            --color-accent-300-rgb: 196, 181, 253;
+            --color-accent-400-rgb: 167, 139, 250;
+            --color-accent-500-rgb: 139, 92, 246;
+            --color-accent-600-rgb: 124, 58, 237;
+            --color-accent-700-rgb: 109, 40, 217;
+            --color-accent-800-rgb: 91, 33, 182;
+            --color-accent-900-rgb: 76, 29, 149;
+            --color-accent-950-rgb: 46, 16, 101;
+            --gradient-primary-from: #06b6d4;
+            --gradient-primary-to: #8b5cf6;
+        }
+
+        body[data-theme='berry'] {
+            --color-primary-50: #fff1f2;
+            --color-primary-100: #ffe4e6;
+            --color-primary-200: #fecdd3;
+            --color-primary-300: #fda4af;
+            --color-primary-400: #fb7185;
+            --color-primary-500: #f43f5e;
+            --color-primary-600: #e11d48;
+            --color-primary-700: #be123c;
+            --color-primary-800: #9f1239;
+            --color-primary-900: #881337;
+            --color-primary-950: #4c0519;
+            --color-primary-50-rgb: 255, 241, 242;
+            --color-primary-100-rgb: 255, 228, 230;
+            --color-primary-200-rgb: 254, 205, 211;
+            --color-primary-300-rgb: 253, 164, 175;
+            --color-primary-400-rgb: 251, 113, 133;
+            --color-primary-500-rgb: 244, 63, 94;
+            --color-primary-600-rgb: 225, 29, 72;
+            --color-primary-700-rgb: 190, 18, 60;
+            --color-primary-800-rgb: 159, 18, 57;
+            --color-primary-900-rgb: 136, 19, 55;
+            --color-primary-950-rgb: 76, 5, 25;
+            --color-secondary-50: #fff7ed;
+            --color-secondary-100: #ffedd5;
+            --color-secondary-200: #fed7aa;
+            --color-secondary-300: #fdba74;
+            --color-secondary-400: #fb923c;
+            --color-secondary-500: #f97316;
+            --color-secondary-600: #ea580c;
+            --color-secondary-700: #c2410c;
+            --color-secondary-800: #9a3412;
+            --color-secondary-900: #7c2d12;
+            --color-secondary-950: #431407;
+            --color-secondary-50-rgb: 255, 247, 237;
+            --color-secondary-100-rgb: 255, 237, 213;
+            --color-secondary-200-rgb: 254, 215, 170;
+            --color-secondary-300-rgb: 253, 186, 116;
+            --color-secondary-400-rgb: 251, 146, 60;
+            --color-secondary-500-rgb: 249, 115, 22;
+            --color-secondary-600-rgb: 234, 88, 12;
+            --color-secondary-700-rgb: 194, 65, 12;
+            --color-secondary-800-rgb: 154, 52, 18;
+            --color-secondary-900-rgb: 124, 45, 18;
+            --color-secondary-950-rgb: 67, 20, 7;
+            --color-accent-50: #faf5ff;
+            --color-accent-100: #f3e8ff;
+            --color-accent-200: #e9d5ff;
+            --color-accent-300: #d8b4fe;
+            --color-accent-400: #c084fc;
+            --color-accent-500: #a855f7;
+            --color-accent-600: #9333ea;
+            --color-accent-700: #7e22ce;
+            --color-accent-800: #6b21a8;
+            --color-accent-900: #581c87;
+            --color-accent-950: #3b0764;
+            --color-accent-50-rgb: 250, 245, 255;
+            --color-accent-100-rgb: 243, 232, 255;
+            --color-accent-200-rgb: 233, 213, 255;
+            --color-accent-300-rgb: 216, 180, 254;
+            --color-accent-400-rgb: 192, 132, 252;
+            --color-accent-500-rgb: 168, 85, 247;
+            --color-accent-600-rgb: 147, 51, 234;
+            --color-accent-700-rgb: 126, 34, 206;
+            --color-accent-800-rgb: 107, 33, 168;
+            --color-accent-900-rgb: 88, 28, 135;
+            --color-accent-950-rgb: 59, 7, 100;
+            --gradient-primary-from: #e11d48;
+            --gradient-primary-to: #a855f7;
+        }
+
+        /* Derived tokens */
+        :root, body[data-theme] {
+            --color-primary: var(--color-primary-600);
+            --color-primary-hover: var(--color-primary-700);
+            --color-primary-light: var(--color-primary-100);
+            --color-secondary: var(--color-secondary-600);
+            --color-secondary-hover: var(--color-secondary-700);
+            --color-secondary-light: var(--color-secondary-100);
+            --color-accent: var(--color-accent-500);
+            --color-accent-hover: var(--color-accent-600);
+            --color-accent-light: var(--color-accent-100);
+            --color-glow: rgba(var(--color-primary-500-rgb), 0.35);
+        }
+
+        .btn-primary {
+            background-color: var(--color-primary);
+            color: white;
+        }
+        .btn-primary:hover {
+            background-color: var(--color-primary-hover);
+        }
+
+        .btn-secondary {
+            background-color: var(--color-secondary);
+            color: white;
+        }
+        .btn-secondary:hover {
+            background-color: var(--color-secondary-hover);
+        }
+
+        .text-primary { color: var(--color-primary); }
+        .bg-primary-light { background-color: var(--color-primary-light); }
+        .bg-secondary-light { background-color: var(--color-secondary-light); }
+
+        .theme-switcher-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(107, 114, 128, 0.9); }
+        .theme-swatch {
+            --swatch-gradient: linear-gradient(135deg, var(--gradient-primary-from), var(--gradient-primary-to));
+            width: 2rem;
+            height: 2rem;
+            border-radius: 9999px;
+            border: 2px solid rgba(255, 255, 255, 0.85);
+            box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.12);
+            background: var(--swatch-gradient);
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+        }
+        .theme-swatch:hover { transform: scale(1.08); }
+        .theme-swatch:focus-visible { outline: 2px solid var(--color-text-primary); outline-offset: 2px; }
+        .theme-swatch.is-active { box-shadow: 0 0 0 3px rgba(15, 23, 42, 0.28); }
+        .theme-swatch--compact { width: 1.75rem; height: 1.75rem; }
+        .theme-swatch--large { width: 2.5rem; height: 2.5rem; }
+
+        .theme-panel { display: flex; gap: 0.5rem; align-items: center; }
+        .theme-panel__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.75rem; }
+
+        /* Utility overrides so Tailwind classes follow the theme */
+        .bg-primary-50 { background-color: var(--color-primary-50) !important; }
+        .bg-primary-100 { background-color: var(--color-primary-100) !important; }
+        .bg-primary-200 { background-color: var(--color-primary-200) !important; }
+        .bg-primary-300 { background-color: var(--color-primary-300) !important; }
+        .bg-primary-400 { background-color: var(--color-primary-400) !important; }
+        .bg-primary-500 { background-color: var(--color-primary-500) !important; }
+        .bg-primary-600 { background-color: var(--color-primary-600) !important; }
+        .bg-primary-700 { background-color: var(--color-primary-700) !important; }
+        .bg-primary-800 { background-color: var(--color-primary-800) !important; }
+        .bg-primary-900 { background-color: var(--color-primary-900) !important; }
+        .bg-primary-950 { background-color: var(--color-primary-950) !important; }
+        .bg-secondary-50 { background-color: var(--color-secondary-50) !important; }
+        .bg-secondary-100 { background-color: var(--color-secondary-100) !important; }
+        .bg-secondary-200 { background-color: var(--color-secondary-200) !important; }
+        .bg-secondary-300 { background-color: var(--color-secondary-300) !important; }
+        .bg-secondary-400 { background-color: var(--color-secondary-400) !important; }
+        .bg-secondary-500 { background-color: var(--color-secondary-500) !important; }
+        .bg-secondary-600 { background-color: var(--color-secondary-600) !important; }
+        .bg-secondary-700 { background-color: var(--color-secondary-700) !important; }
+        .bg-secondary-800 { background-color: var(--color-secondary-800) !important; }
+        .bg-secondary-900 { background-color: var(--color-secondary-900) !important; }
+        .bg-secondary-950 { background-color: var(--color-secondary-950) !important; }
+        .bg-accent-50 { background-color: var(--color-accent-50) !important; }
+        .bg-accent-100 { background-color: var(--color-accent-100) !important; }
+        .bg-accent-200 { background-color: var(--color-accent-200) !important; }
+        .bg-accent-300 { background-color: var(--color-accent-300) !important; }
+        .bg-accent-400 { background-color: var(--color-accent-400) !important; }
+        .bg-accent-500 { background-color: var(--color-accent-500) !important; }
+        .bg-accent-600 { background-color: var(--color-accent-600) !important; }
+        .bg-accent-700 { background-color: var(--color-accent-700) !important; }
+        .bg-accent-800 { background-color: var(--color-accent-800) !important; }
+        .bg-accent-900 { background-color: var(--color-accent-900) !important; }
+        .bg-accent-950 { background-color: var(--color-accent-950) !important; }
+
+        .text-primary-50 { color: var(--color-primary-50) !important; }
+        .text-primary-100 { color: var(--color-primary-100) !important; }
+        .text-primary-200 { color: var(--color-primary-200) !important; }
+        .text-primary-300 { color: var(--color-primary-300) !important; }
+        .text-primary-400 { color: var(--color-primary-400) !important; }
+        .text-primary-500 { color: var(--color-primary-500) !important; }
+        .text-primary-600 { color: var(--color-primary-600) !important; }
+        .text-primary-700 { color: var(--color-primary-700) !important; }
+        .text-primary-800 { color: var(--color-primary-800) !important; }
+        .text-primary-900 { color: var(--color-primary-900) !important; }
+        .text-primary-950 { color: var(--color-primary-950) !important; }
+        .text-secondary-50 { color: var(--color-secondary-50) !important; }
+        .text-secondary-100 { color: var(--color-secondary-100) !important; }
+        .text-secondary-200 { color: var(--color-secondary-200) !important; }
+        .text-secondary-300 { color: var(--color-secondary-300) !important; }
+        .text-secondary-400 { color: var(--color-secondary-400) !important; }
+        .text-secondary-500 { color: var(--color-secondary-500) !important; }
+        .text-secondary-600 { color: var(--color-secondary-600) !important; }
+        .text-secondary-700 { color: var(--color-secondary-700) !important; }
+        .text-secondary-800 { color: var(--color-secondary-800) !important; }
+        .text-secondary-900 { color: var(--color-secondary-900) !important; }
+        .text-secondary-950 { color: var(--color-secondary-950) !important; }
+        .text-accent-50 { color: var(--color-accent-50) !important; }
+        .text-accent-100 { color: var(--color-accent-100) !important; }
+        .text-accent-200 { color: var(--color-accent-200) !important; }
+        .text-accent-300 { color: var(--color-accent-300) !important; }
+        .text-accent-400 { color: var(--color-accent-400) !important; }
+        .text-accent-500 { color: var(--color-accent-500) !important; }
+        .text-accent-600 { color: var(--color-accent-600) !important; }
+        .text-accent-700 { color: var(--color-accent-700) !important; }
+        .text-accent-800 { color: var(--color-accent-800) !important; }
+        .text-accent-900 { color: var(--color-accent-900) !important; }
+        .text-accent-950 { color: var(--color-accent-950) !important; }
+
+        .border-primary-50 { border-color: var(--color-primary-50) !important; }
+        .border-primary-100 { border-color: var(--color-primary-100) !important; }
+        .border-primary-200 { border-color: var(--color-primary-200) !important; }
+        .border-primary-300 { border-color: var(--color-primary-300) !important; }
+        .border-primary-400 { border-color: var(--color-primary-400) !important; }
+        .border-primary-500 { border-color: var(--color-primary-500) !important; }
+        .border-primary-600 { border-color: var(--color-primary-600) !important; }
+        .border-primary-700 { border-color: var(--color-primary-700) !important; }
+        .border-primary-800 { border-color: var(--color-primary-800) !important; }
+        .border-primary-900 { border-color: var(--color-primary-900) !important; }
+        .border-primary-950 { border-color: var(--color-primary-950) !important; }
+        .border-secondary-50 { border-color: var(--color-secondary-50) !important; }
+        .border-secondary-100 { border-color: var(--color-secondary-100) !important; }
+        .border-secondary-200 { border-color: var(--color-secondary-200) !important; }
+        .border-secondary-300 { border-color: var(--color-secondary-300) !important; }
+        .border-secondary-400 { border-color: var(--color-secondary-400) !important; }
+        .border-secondary-500 { border-color: var(--color-secondary-500) !important; }
+        .border-secondary-600 { border-color: var(--color-secondary-600) !important; }
+        .border-secondary-700 { border-color: var(--color-secondary-700) !important; }
+        .border-secondary-800 { border-color: var(--color-secondary-800) !important; }
+        .border-secondary-900 { border-color: var(--color-secondary-900) !important; }
+        .border-secondary-950 { border-color: var(--color-secondary-950) !important; }
+        .border-accent-50 { border-color: var(--color-accent-50) !important; }
+        .border-accent-100 { border-color: var(--color-accent-100) !important; }
+        .border-accent-200 { border-color: var(--color-accent-200) !important; }
+        .border-accent-300 { border-color: var(--color-accent-300) !important; }
+        .border-accent-400 { border-color: var(--color-accent-400) !important; }
+        .border-accent-500 { border-color: var(--color-accent-500) !important; }
+        .border-accent-600 { border-color: var(--color-accent-600) !important; }
+        .border-accent-700 { border-color: var(--color-accent-700) !important; }
+        .border-accent-800 { border-color: var(--color-accent-800) !important; }
+        .border-accent-900 { border-color: var(--color-accent-900) !important; }
+        .border-accent-950 { border-color: var(--color-accent-950) !important; }
+
+        .ring-primary-50 { --tw-ring-color: var(--color-primary-50) !important; }
+        .ring-primary-100 { --tw-ring-color: var(--color-primary-100) !important; }
+        .ring-primary-200 { --tw-ring-color: var(--color-primary-200) !important; }
+        .ring-primary-300 { --tw-ring-color: var(--color-primary-300) !important; }
+        .ring-primary-400 { --tw-ring-color: var(--color-primary-400) !important; }
+        .ring-primary-500 { --tw-ring-color: var(--color-primary-500) !important; }
+        .ring-primary-600 { --tw-ring-color: var(--color-primary-600) !important; }
+        .ring-primary-700 { --tw-ring-color: var(--color-primary-700) !important; }
+        .ring-primary-800 { --tw-ring-color: var(--color-primary-800) !important; }
+        .ring-primary-900 { --tw-ring-color: var(--color-primary-900) !important; }
+        .ring-primary-950 { --tw-ring-color: var(--color-primary-950) !important; }
+        .ring-secondary-50 { --tw-ring-color: var(--color-secondary-50) !important; }
+        .ring-secondary-100 { --tw-ring-color: var(--color-secondary-100) !important; }
+        .ring-secondary-200 { --tw-ring-color: var(--color-secondary-200) !important; }
+        .ring-secondary-300 { --tw-ring-color: var(--color-secondary-300) !important; }
+        .ring-secondary-400 { --tw-ring-color: var(--color-secondary-400) !important; }
+        .ring-secondary-500 { --tw-ring-color: var(--color-secondary-500) !important; }
+        .ring-secondary-600 { --tw-ring-color: var(--color-secondary-600) !important; }
+        .ring-secondary-700 { --tw-ring-color: var(--color-secondary-700) !important; }
+        .ring-secondary-800 { --tw-ring-color: var(--color-secondary-800) !important; }
+        .ring-secondary-900 { --tw-ring-color: var(--color-secondary-900) !important; }
+        .ring-secondary-950 { --tw-ring-color: var(--color-secondary-950) !important; }
+        .ring-accent-50 { --tw-ring-color: var(--color-accent-50) !important; }
+        .ring-accent-100 { --tw-ring-color: var(--color-accent-100) !important; }
+        .ring-accent-200 { --tw-ring-color: var(--color-accent-200) !important; }
+        .ring-accent-300 { --tw-ring-color: var(--color-accent-300) !important; }
+        .ring-accent-400 { --tw-ring-color: var(--color-accent-400) !important; }
+        .ring-accent-500 { --tw-ring-color: var(--color-accent-500) !important; }
+        .ring-accent-600 { --tw-ring-color: var(--color-accent-600) !important; }
+        .ring-accent-700 { --tw-ring-color: var(--color-accent-700) !important; }
+        .ring-accent-800 { --tw-ring-color: var(--color-accent-800) !important; }
+        .ring-accent-900 { --tw-ring-color: var(--color-accent-900) !important; }
+        .ring-accent-950 { --tw-ring-color: var(--color-accent-950) !important; }
+
+        .focus\:ring-primary-50:focus { --tw-ring-color: var(--color-primary-50) !important; }
+        .focus\:ring-primary-100:focus { --tw-ring-color: var(--color-primary-100) !important; }
+        .focus\:ring-primary-200:focus { --tw-ring-color: var(--color-primary-200) !important; }
+        .focus\:ring-primary-300:focus { --tw-ring-color: var(--color-primary-300) !important; }
+        .focus\:ring-primary-400:focus { --tw-ring-color: var(--color-primary-400) !important; }
+        .focus\:ring-primary-500:focus { --tw-ring-color: var(--color-primary-500) !important; }
+        .focus\:ring-primary-600:focus { --tw-ring-color: var(--color-primary-600) !important; }
+        .focus\:ring-primary-700:focus { --tw-ring-color: var(--color-primary-700) !important; }
+        .focus\:ring-primary-800:focus { --tw-ring-color: var(--color-primary-800) !important; }
+        .focus\:ring-primary-900:focus { --tw-ring-color: var(--color-primary-900) !important; }
+        .focus\:ring-primary-950:focus { --tw-ring-color: var(--color-primary-950) !important; }
+        .focus\:ring-secondary-50:focus { --tw-ring-color: var(--color-secondary-50) !important; }
+        .focus\:ring-secondary-100:focus { --tw-ring-color: var(--color-secondary-100) !important; }
+        .focus\:ring-secondary-200:focus { --tw-ring-color: var(--color-secondary-200) !important; }
+        .focus\:ring-secondary-300:focus { --tw-ring-color: var(--color-secondary-300) !important; }
+        .focus\:ring-secondary-400:focus { --tw-ring-color: var(--color-secondary-400) !important; }
+        .focus\:ring-secondary-500:focus { --tw-ring-color: var(--color-secondary-500) !important; }
+        .focus\:ring-secondary-600:focus { --tw-ring-color: var(--color-secondary-600) !important; }
+        .focus\:ring-secondary-700:focus { --tw-ring-color: var(--color-secondary-700) !important; }
+        .focus\:ring-secondary-800:focus { --tw-ring-color: var(--color-secondary-800) !important; }
+        .focus\:ring-secondary-900:focus { --tw-ring-color: var(--color-secondary-900) !important; }
+        .focus\:ring-secondary-950:focus { --tw-ring-color: var(--color-secondary-950) !important; }
+        .focus\:ring-accent-50:focus { --tw-ring-color: var(--color-accent-50) !important; }
+        .focus\:ring-accent-100:focus { --tw-ring-color: var(--color-accent-100) !important; }
+        .focus\:ring-accent-200:focus { --tw-ring-color: var(--color-accent-200) !important; }
+        .focus\:ring-accent-300:focus { --tw-ring-color: var(--color-accent-300) !important; }
+        .focus\:ring-accent-400:focus { --tw-ring-color: var(--color-accent-400) !important; }
+        .focus\:ring-accent-500:focus { --tw-ring-color: var(--color-accent-500) !important; }
+        .focus\:ring-accent-600:focus { --tw-ring-color: var(--color-accent-600) !important; }
+        .focus\:ring-accent-700:focus { --tw-ring-color: var(--color-accent-700) !important; }
+        .focus\:ring-accent-800:focus { --tw-ring-color: var(--color-accent-800) !important; }
+        .focus\:ring-accent-900:focus { --tw-ring-color: var(--color-accent-900) !important; }
+        .focus\:ring-accent-950:focus { --tw-ring-color: var(--color-accent-950) !important; }
+
+        .hover\:bg-primary-50:hover { background-color: var(--color-primary-50) !important; }
+        .hover\:bg-primary-100:hover { background-color: var(--color-primary-100) !important; }
+        .hover\:bg-primary-200:hover { background-color: var(--color-primary-200) !important; }
+        .hover\:bg-primary-300:hover { background-color: var(--color-primary-300) !important; }
+        .hover\:bg-primary-400:hover { background-color: var(--color-primary-400) !important; }
+        .hover\:bg-primary-500:hover { background-color: var(--color-primary-500) !important; }
+        .hover\:bg-primary-600:hover { background-color: var(--color-primary-600) !important; }
+        .hover\:bg-primary-700:hover { background-color: var(--color-primary-700) !important; }
+        .hover\:bg-primary-800:hover { background-color: var(--color-primary-800) !important; }
+        .hover\:bg-primary-900:hover { background-color: var(--color-primary-900) !important; }
+        .hover\:bg-primary-950:hover { background-color: var(--color-primary-950) !important; }
+        .hover\:bg-secondary-50:hover { background-color: var(--color-secondary-50) !important; }
+        .hover\:bg-secondary-100:hover { background-color: var(--color-secondary-100) !important; }
+        .hover\:bg-secondary-200:hover { background-color: var(--color-secondary-200) !important; }
+        .hover\:bg-secondary-300:hover { background-color: var(--color-secondary-300) !important; }
+        .hover\:bg-secondary-400:hover { background-color: var(--color-secondary-400) !important; }
+        .hover\:bg-secondary-500:hover { background-color: var(--color-secondary-500) !important; }
+        .hover\:bg-secondary-600:hover { background-color: var(--color-secondary-600) !important; }
+        .hover\:bg-secondary-700:hover { background-color: var(--color-secondary-700) !important; }
+        .hover\:bg-secondary-800:hover { background-color: var(--color-secondary-800) !important; }
+        .hover\:bg-secondary-900:hover { background-color: var(--color-secondary-900) !important; }
+        .hover\:bg-secondary-950:hover { background-color: var(--color-secondary-950) !important; }
+        .hover\:bg-accent-50:hover { background-color: var(--color-accent-50) !important; }
+        .hover\:bg-accent-100:hover { background-color: var(--color-accent-100) !important; }
+        .hover\:bg-accent-200:hover { background-color: var(--color-accent-200) !important; }
+        .hover\:bg-accent-300:hover { background-color: var(--color-accent-300) !important; }
+        .hover\:bg-accent-400:hover { background-color: var(--color-accent-400) !important; }
+        .hover\:bg-accent-500:hover { background-color: var(--color-accent-500) !important; }
+        .hover\:bg-accent-600:hover { background-color: var(--color-accent-600) !important; }
+        .hover\:bg-accent-700:hover { background-color: var(--color-accent-700) !important; }
+        .hover\:bg-accent-800:hover { background-color: var(--color-accent-800) !important; }
+        .hover\:bg-accent-900:hover { background-color: var(--color-accent-900) !important; }
+        .hover\:bg-accent-950:hover { background-color: var(--color-accent-950) !important; }
+
+        .hover\:text-primary-50:hover { color: var(--color-primary-50) !important; }
+        .hover\:text-primary-100:hover { color: var(--color-primary-100) !important; }
+        .hover\:text-primary-200:hover { color: var(--color-primary-200) !important; }
+        .hover\:text-primary-300:hover { color: var(--color-primary-300) !important; }
+        .hover\:text-primary-400:hover { color: var(--color-primary-400) !important; }
+        .hover\:text-primary-500:hover { color: var(--color-primary-500) !important; }
+        .hover\:text-primary-600:hover { color: var(--color-primary-600) !important; }
+        .hover\:text-primary-700:hover { color: var(--color-primary-700) !important; }
+        .hover\:text-primary-800:hover { color: var(--color-primary-800) !important; }
+        .hover\:text-primary-900:hover { color: var(--color-primary-900) !important; }
+        .hover\:text-primary-950:hover { color: var(--color-primary-950) !important; }
+        .hover\:text-secondary-50:hover { color: var(--color-secondary-50) !important; }
+        .hover\:text-secondary-100:hover { color: var(--color-secondary-100) !important; }
+        .hover\:text-secondary-200:hover { color: var(--color-secondary-200) !important; }
+        .hover\:text-secondary-300:hover { color: var(--color-secondary-300) !important; }
+        .hover\:text-secondary-400:hover { color: var(--color-secondary-400) !important; }
+        .hover\:text-secondary-500:hover { color: var(--color-secondary-500) !important; }
+        .hover\:text-secondary-600:hover { color: var(--color-secondary-600) !important; }
+        .hover\:text-secondary-700:hover { color: var(--color-secondary-700) !important; }
+        .hover\:text-secondary-800:hover { color: var(--color-secondary-800) !important; }
+        .hover\:text-secondary-900:hover { color: var(--color-secondary-900) !important; }
+        .hover\:text-secondary-950:hover { color: var(--color-secondary-950) !important; }
+        .hover\:text-accent-50:hover { color: var(--color-accent-50) !important; }
+        .hover\:text-accent-100:hover { color: var(--color-accent-100) !important; }
+        .hover\:text-accent-200:hover { color: var(--color-accent-200) !important; }
+        .hover\:text-accent-300:hover { color: var(--color-accent-300) !important; }
+        .hover\:text-accent-400:hover { color: var(--color-accent-400) !important; }
+        .hover\:text-accent-500:hover { color: var(--color-accent-500) !important; }
+        .hover\:text-accent-600:hover { color: var(--color-accent-600) !important; }
+        .hover\:text-accent-700:hover { color: var(--color-accent-700) !important; }
+        .hover\:text-accent-800:hover { color: var(--color-accent-800) !important; }
+        .hover\:text-accent-900:hover { color: var(--color-accent-900) !important; }
+        .hover\:text-accent-950:hover { color: var(--color-accent-950) !important; }
+
+        .from-primary-50 { --tw-gradient-from: var(--color-primary-50) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent) !important; }
+        .from-primary-100 { --tw-gradient-from: var(--color-primary-100) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent) !important; }
+        .from-primary-200 { --tw-gradient-from: var(--color-primary-200) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent) !important; }
+        .from-primary-300 { --tw-gradient-from: var(--color-primary-300) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent) !important; }
+        .from-primary-400 { --tw-gradient-from: var(--color-primary-400) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent) !important; }
+        .from-primary-500 { --tw-gradient-from: var(--color-primary-500) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent) !important; }
+        .from-primary-600 { --tw-gradient-from: var(--color-primary-600) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent) !important; }
+        .from-primary-700 { --tw-gradient-from: var(--color-primary-700) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent) !important; }
+        .from-primary-800 { --tw-gradient-from: var(--color-primary-800) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent) !important; }
+        .from-primary-900 { --tw-gradient-from: var(--color-primary-900) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent) !important; }
+        .from-primary-950 { --tw-gradient-from: var(--color-primary-950) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent) !important; }
+        .from-secondary-50 { --tw-gradient-from: var(--color-secondary-50) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent) !important; }
+        .from-secondary-100 { --tw-gradient-from: var(--color-secondary-100) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent) !important; }
+        .from-secondary-200 { --tw-gradient-from: var(--color-secondary-200) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent) !important; }
+        .from-secondary-300 { --tw-gradient-from: var(--color-secondary-300) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent) !important; }
+        .from-secondary-400 { --tw-gradient-from: var(--color-secondary-400) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent) !important; }
+        .from-secondary-500 { --tw-gradient-from: var(--color-secondary-500) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent) !important; }
+        .from-secondary-600 { --tw-gradient-from: var(--color-secondary-600) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent) !important; }
+        .from-secondary-700 { --tw-gradient-from: var(--color-secondary-700) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent) !important; }
+        .from-secondary-800 { --tw-gradient-from: var(--color-secondary-800) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent) !important; }
+        .from-secondary-900 { --tw-gradient-from: var(--color-secondary-900) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent) !important; }
+        .from-secondary-950 { --tw-gradient-from: var(--color-secondary-950) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent) !important; }
+        .from-accent-50 { --tw-gradient-from: var(--color-accent-50) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent) !important; }
+        .from-accent-100 { --tw-gradient-from: var(--color-accent-100) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent) !important; }
+        .from-accent-200 { --tw-gradient-from: var(--color-accent-200) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent) !important; }
+        .from-accent-300 { --tw-gradient-from: var(--color-accent-300) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent) !important; }
+        .from-accent-400 { --tw-gradient-from: var(--color-accent-400) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent) !important; }
+        .from-accent-500 { --tw-gradient-from: var(--color-accent-500) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent) !important; }
+        .from-accent-600 { --tw-gradient-from: var(--color-accent-600) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent) !important; }
+        .from-accent-700 { --tw-gradient-from: var(--color-accent-700) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent) !important; }
+        .from-accent-800 { --tw-gradient-from: var(--color-accent-800) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent) !important; }
+        .from-accent-900 { --tw-gradient-from: var(--color-accent-900) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent) !important; }
+        .from-accent-950 { --tw-gradient-from: var(--color-accent-950) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent) !important; }
+
+        .via-primary-50 { --tw-gradient-stops: var(--tw-gradient-from), var(--color-primary-50), var(--tw-gradient-to, transparent) !important; }
+        .via-primary-100 { --tw-gradient-stops: var(--tw-gradient-from), var(--color-primary-100), var(--tw-gradient-to, transparent) !important; }
+        .via-primary-200 { --tw-gradient-stops: var(--tw-gradient-from), var(--color-primary-200), var(--tw-gradient-to, transparent) !important; }
+        .via-primary-300 { --tw-gradient-stops: var(--tw-gradient-from), var(--color-primary-300), var(--tw-gradient-to, transparent) !important; }
+        .via-primary-400 { --tw-gradient-stops: var(--tw-gradient-from), var(--color-primary-400), var(--tw-gradient-to, transparent) !important; }
+        .via-primary-500 { --tw-gradient-stops: var(--tw-gradient-from), var(--color-primary-500), var(--tw-gradient-to, transparent) !important; }
+        .via-primary-600 { --tw-gradient-stops: var(--tw-gradient-from), var(--color-primary-600), var(--tw-gradient-to, transparent) !important; }
+        .via-primary-700 { --tw-gradient-stops: var(--tw-gradient-from), var(--color-primary-700), var(--tw-gradient-to, transparent) !important; }
+        .via-primary-800 { --tw-gradient-stops: var(--tw-gradient-from), var(--color-primary-800), var(--tw-gradient-to, transparent) !important; }
+        .via-primary-900 { --tw-gradient-stops: var(--tw-gradient-from), var(--color-primary-900), var(--tw-gradient-to, transparent) !important; }
+        .via-primary-950 { --tw-gradient-stops: var(--tw-gradient-from), var(--color-primary-950), var(--tw-gradient-to, transparent) !important; }
+        .via-secondary-50 { --tw-gradient-stops: var(--tw-gradient-from), var(--color-secondary-50), var(--tw-gradient-to, transparent) !important; }
+        .via-secondary-100 { --tw-gradient-stops: var(--tw-gradient-from), var(--color-secondary-100), var(--tw-gradient-to, transparent) !important; }
+        .via-secondary-200 { --tw-gradient-stops: var(--tw-gradient-from), var(--color-secondary-200), var(--tw-gradient-to, transparent) !important; }
+        .via-secondary-300 { --tw-gradient-stops: var(--tw-gradient-from), var(--color-secondary-300), var(--tw-gradient-to, transparent) !important; }
+        .via-secondary-400 { --tw-gradient-stops: var(--tw-gradient-from), var(--color-secondary-400), var(--tw-gradient-to, transparent) !important; }
+        .via-secondary-500 { --tw-gradient-stops: var(--tw-gradient-from), var(--color-secondary-500), var(--tw-gradient-to, transparent) !important; }
+        .via-secondary-600 { --tw-gradient-stops: var(--tw-gradient-from), var(--color-secondary-600), var(--tw-gradient-to, transparent) !important; }
+        .via-secondary-700 { --tw-gradient-stops: var(--tw-gradient-from), var(--color-secondary-700), var(--tw-gradient-to, transparent) !important; }
+        .via-secondary-800 { --tw-gradient-stops: var(--tw-gradient-from), var(--color-secondary-800), var(--tw-gradient-to, transparent) !important; }
+        .via-secondary-900 { --tw-gradient-stops: var(--tw-gradient-from), var(--color-secondary-900), var(--tw-gradient-to, transparent) !important; }
+        .via-secondary-950 { --tw-gradient-stops: var(--tw-gradient-from), var(--color-secondary-950), var(--tw-gradient-to, transparent) !important; }
+        .via-accent-50 { --tw-gradient-stops: var(--tw-gradient-from), var(--color-accent-50), var(--tw-gradient-to, transparent) !important; }
+        .via-accent-100 { --tw-gradient-stops: var(--tw-gradient-from), var(--color-accent-100), var(--tw-gradient-to, transparent) !important; }
+        .via-accent-200 { --tw-gradient-stops: var(--tw-gradient-from), var(--color-accent-200), var(--tw-gradient-to, transparent) !important; }
+        .via-accent-300 { --tw-gradient-stops: var(--tw-gradient-from), var(--color-accent-300), var(--tw-gradient-to, transparent) !important; }
+        .via-accent-400 { --tw-gradient-stops: var(--tw-gradient-from), var(--color-accent-400), var(--tw-gradient-to, transparent) !important; }
+        .via-accent-500 { --tw-gradient-stops: var(--tw-gradient-from), var(--color-accent-500), var(--tw-gradient-to, transparent) !important; }
+        .via-accent-600 { --tw-gradient-stops: var(--tw-gradient-from), var(--color-accent-600), var(--tw-gradient-to, transparent) !important; }
+        .via-accent-700 { --tw-gradient-stops: var(--tw-gradient-from), var(--color-accent-700), var(--tw-gradient-to, transparent) !important; }
+        .via-accent-800 { --tw-gradient-stops: var(--tw-gradient-from), var(--color-accent-800), var(--tw-gradient-to, transparent) !important; }
+        .via-accent-900 { --tw-gradient-stops: var(--tw-gradient-from), var(--color-accent-900), var(--tw-gradient-to, transparent) !important; }
+        .via-accent-950 { --tw-gradient-stops: var(--tw-gradient-from), var(--color-accent-950), var(--tw-gradient-to, transparent) !important; }
+
+        .to-primary-50 { --tw-gradient-to: var(--color-primary-50) !important; }
+        .to-primary-100 { --tw-gradient-to: var(--color-primary-100) !important; }
+        .to-primary-200 { --tw-gradient-to: var(--color-primary-200) !important; }
+        .to-primary-300 { --tw-gradient-to: var(--color-primary-300) !important; }
+        .to-primary-400 { --tw-gradient-to: var(--color-primary-400) !important; }
+        .to-primary-500 { --tw-gradient-to: var(--color-primary-500) !important; }
+        .to-primary-600 { --tw-gradient-to: var(--color-primary-600) !important; }
+        .to-primary-700 { --tw-gradient-to: var(--color-primary-700) !important; }
+        .to-primary-800 { --tw-gradient-to: var(--color-primary-800) !important; }
+        .to-primary-900 { --tw-gradient-to: var(--color-primary-900) !important; }
+        .to-primary-950 { --tw-gradient-to: var(--color-primary-950) !important; }
+        .to-secondary-50 { --tw-gradient-to: var(--color-secondary-50) !important; }
+        .to-secondary-100 { --tw-gradient-to: var(--color-secondary-100) !important; }
+        .to-secondary-200 { --tw-gradient-to: var(--color-secondary-200) !important; }
+        .to-secondary-300 { --tw-gradient-to: var(--color-secondary-300) !important; }
+        .to-secondary-400 { --tw-gradient-to: var(--color-secondary-400) !important; }
+        .to-secondary-500 { --tw-gradient-to: var(--color-secondary-500) !important; }
+        .to-secondary-600 { --tw-gradient-to: var(--color-secondary-600) !important; }
+        .to-secondary-700 { --tw-gradient-to: var(--color-secondary-700) !important; }
+        .to-secondary-800 { --tw-gradient-to: var(--color-secondary-800) !important; }
+        .to-secondary-900 { --tw-gradient-to: var(--color-secondary-900) !important; }
+        .to-secondary-950 { --tw-gradient-to: var(--color-secondary-950) !important; }
+        .to-accent-50 { --tw-gradient-to: var(--color-accent-50) !important; }
+        .to-accent-100 { --tw-gradient-to: var(--color-accent-100) !important; }
+        .to-accent-200 { --tw-gradient-to: var(--color-accent-200) !important; }
+        .to-accent-300 { --tw-gradient-to: var(--color-accent-300) !important; }
+        .to-accent-400 { --tw-gradient-to: var(--color-accent-400) !important; }
+        .to-accent-500 { --tw-gradient-to: var(--color-accent-500) !important; }
+        .to-accent-600 { --tw-gradient-to: var(--color-accent-600) !important; }
+        .to-accent-700 { --tw-gradient-to: var(--color-accent-700) !important; }
+        .to-accent-800 { --tw-gradient-to: var(--color-accent-800) !important; }
+        .to-accent-900 { --tw-gradient-to: var(--color-accent-900) !important; }
+        .to-accent-950 { --tw-gradient-to: var(--color-accent-950) !important; }
+
+        .bg-primary-100\/40 { background-color: rgba(var(--color-primary-100-rgb), 0.40) !important; }
+        .bg-primary-100\/60 { background-color: rgba(var(--color-primary-100-rgb), 0.60) !important; }
+        .bg-primary-100\/80 { background-color: rgba(var(--color-primary-100-rgb), 0.80) !important; }
+        .bg-primary-200\/40 { background-color: rgba(var(--color-primary-200-rgb), 0.40) !important; }
+        .bg-primary-200\/50 { background-color: rgba(var(--color-primary-200-rgb), 0.50) !important; }
+        .bg-primary-200\/60 { background-color: rgba(var(--color-primary-200-rgb), 0.60) !important; }
+        .bg-primary-200\/70 { background-color: rgba(var(--color-primary-200-rgb), 0.70) !important; }
+        .bg-primary-500\/10 { background-color: rgba(var(--color-primary-500-rgb), 0.10) !important; }
+        .bg-primary-700\/60 { background-color: rgba(var(--color-primary-700-rgb), 0.60) !important; }
+        .bg-primary-900\/10 { background-color: rgba(var(--color-primary-900-rgb), 0.10) !important; }
+        .bg-primary-900\/40 { background-color: rgba(var(--color-primary-900-rgb), 0.40) !important; }
+        .bg-primary-900\/50 { background-color: rgba(var(--color-primary-900-rgb), 0.50) !important; }
+        .bg-secondary-100\/40 { background-color: rgba(var(--color-secondary-100-rgb), 0.40) !important; }
+        .bg-secondary-100\/80 { background-color: rgba(var(--color-secondary-100-rgb), 0.80) !important; }
+        .bg-secondary-200\/40 { background-color: rgba(var(--color-secondary-200-rgb), 0.40) !important; }
+        .bg-secondary-200\/70 { background-color: rgba(var(--color-secondary-200-rgb), 0.70) !important; }
+        .bg-secondary-500\/60 { background-color: rgba(var(--color-secondary-500-rgb), 0.60) !important; }
+        .bg-secondary-700\/60 { background-color: rgba(var(--color-secondary-700-rgb), 0.60) !important; }
+        .bg-secondary-900\/50 { background-color: rgba(var(--color-secondary-900-rgb), 0.50) !important; }
+        .bg-accent-100\/60 { background-color: rgba(var(--color-accent-100-rgb), 0.60) !important; }
+        .bg-accent-200\/50 { background-color: rgba(var(--color-accent-200-rgb), 0.50) !important; }
+        .bg-accent-300\/60 { background-color: rgba(var(--color-accent-300-rgb), 0.60) !important; }
+
+        .from-primary-700\/60 { --tw-gradient-from: rgba(var(--color-primary-700-rgb), 0.60) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent) !important; }
+        .from-primary-900\/40 { --tw-gradient-from: rgba(var(--color-primary-900-rgb), 0.40) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent) !important; }
+        .from-primary-900\/50 { --tw-gradient-from: rgba(var(--color-primary-900-rgb), 0.50) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent) !important; }
+
+        .via-primary-500\/10 { --tw-gradient-stops: var(--tw-gradient-from), rgba(var(--color-primary-500-rgb), 0.10), var(--tw-gradient-to, transparent) !important; }
+        .via-primary-500\/40 { --tw-gradient-stops: var(--tw-gradient-from), rgba(var(--color-primary-500-rgb), 0.40), var(--tw-gradient-to, transparent) !important; }
+        .via-primary-600\/10 { --tw-gradient-stops: var(--tw-gradient-from), rgba(var(--color-primary-600-rgb), 0.10), var(--tw-gradient-to, transparent) !important; }
+        .via-primary-900\/10 { --tw-gradient-stops: var(--tw-gradient-from), rgba(var(--color-primary-900-rgb), 0.10), var(--tw-gradient-to, transparent) !important; }
+
+        .group:hover .group-hover\:from-primary-700\/60 { --tw-gradient-from: rgba(var(--color-primary-700-rgb), 0.60) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, transparent) !important; }
+
+        .group:hover .group-hover\:via-primary-500\/10 { --tw-gradient-stops: var(--tw-gradient-from), rgba(var(--color-primary-500-rgb), 0.10), var(--tw-gradient-to, transparent) !important; }
+
+        @keyframes float-slow {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0); }
+        }
+
+        @keyframes fade-in-up {
+            0% { opacity: 0; transform: translateY(12px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(var(--color-primary-500-rgb), 0.25); }
+            50% { box-shadow: 0 0 0 12px rgba(var(--color-primary-500-rgb), 0); }
+        }
+
+        .animate-float-slow { animation: float-slow 6s ease-in-out infinite; }
+        .animate-fade-in-up { animation: fade-in-up 0.8s ease-out both; }
+        .animate-pulse-glow { animation: pulse-glow 4.5s ease-in-out infinite; }
+
