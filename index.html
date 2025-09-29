@@ -136,28 +136,38 @@
                 </div>
 
                 <!-- Theme Switcher -->
-                <div class="hidden lg:flex items-center space-x-3">
-                    <span class="theme-switcher-label">Mode</span>
-                    <span class="text-xs font-semibold text-neutral-600" data-theme-label>Ocean</span>
-                    <div class="theme-panel" role="group" aria-label="Pilih mode warna">
-                        <button type="button" class="theme-swatch theme-swatch--compact is-active" data-theme-option="ocean" aria-pressed="true" title="Ocean" style="--swatch-gradient: linear-gradient(135deg, #2563eb, #0ea5e9);">
-                            <span class="sr-only">Ocean</span>
+                <div class="hidden lg:flex items-center">
+                    <div class="relative" data-theme-dropdown>
+                        <button type="button" class="theme-toggle-button" data-theme-toggle aria-haspopup="true" aria-expanded="false">
+                            <span class="theme-switcher-label">Mode</span>
+                            <span class="theme-toggle-indicator" data-theme-label>Ocean</span>
+                            <svg class="w-4 h-4 text-neutral-400" data-theme-toggle-icon fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M6 9l6 6 6-6" />
+                            </svg>
                         </button>
-                        <button type="button" class="theme-swatch theme-swatch--compact" data-theme-option="sunset" aria-pressed="false" title="Sunset" style="--swatch-gradient: linear-gradient(135deg, #f97316, #ec4899);">
-                            <span class="sr-only">Sunset</span>
-                        </button>
-                        <button type="button" class="theme-swatch theme-swatch--compact" data-theme-option="forest" aria-pressed="false" title="Forest" style="--swatch-gradient: linear-gradient(135deg, #16a34a, #22d3ee);">
-                            <span class="sr-only">Forest</span>
-                        </button>
-                        <button type="button" class="theme-swatch theme-swatch--compact" data-theme-option="royal" aria-pressed="false" title="Royal" style="--swatch-gradient: linear-gradient(135deg, #7c3aed, #f472b6);">
-                            <span class="sr-only">Royal</span>
-                        </button>
-                        <button type="button" class="theme-swatch theme-swatch--compact" data-theme-option="aurora" aria-pressed="false" title="Aurora" style="--swatch-gradient: linear-gradient(135deg, #06b6d4, #a855f7);">
-                            <span class="sr-only">Aurora</span>
-                        </button>
-                        <button type="button" class="theme-swatch theme-swatch--compact" data-theme-option="berry" aria-pressed="false" title="Berry" style="--swatch-gradient: linear-gradient(135deg, #e11d48, #a855f7);">
-                            <span class="sr-only">Berry</span>
-                        </button>
+                        <div class="theme-dropdown-panel hidden absolute right-0 mt-3" data-theme-panel role="menu" aria-label="Pilih mode warna">
+                            <p class="text-[0.65rem] font-semibold text-neutral-500 uppercase tracking-[0.18em] mb-2">Pilih Mode Warna</p>
+                            <div class="grid grid-cols-3 gap-2">
+                                <button type="button" class="theme-swatch theme-swatch--compact is-active" data-theme-option="ocean" aria-pressed="true" title="Ocean" style="--swatch-gradient: linear-gradient(135deg, #2563eb, #0ea5e9);">
+                                    <span class="sr-only">Ocean</span>
+                                </button>
+                                <button type="button" class="theme-swatch theme-swatch--compact" data-theme-option="sunset" aria-pressed="false" title="Sunset" style="--swatch-gradient: linear-gradient(135deg, #f97316, #ec4899);">
+                                    <span class="sr-only">Sunset</span>
+                                </button>
+                                <button type="button" class="theme-swatch theme-swatch--compact" data-theme-option="forest" aria-pressed="false" title="Forest" style="--swatch-gradient: linear-gradient(135deg, #16a34a, #22d3ee);">
+                                    <span class="sr-only">Forest</span>
+                                </button>
+                                <button type="button" class="theme-swatch theme-swatch--compact" data-theme-option="royal" aria-pressed="false" title="Royal" style="--swatch-gradient: linear-gradient(135deg, #7c3aed, #f472b6);">
+                                    <span class="sr-only">Royal</span>
+                                </button>
+                                <button type="button" class="theme-swatch theme-swatch--compact" data-theme-option="aurora" aria-pressed="false" title="Aurora" style="--swatch-gradient: linear-gradient(135deg, #06b6d4, #a855f7);">
+                                    <span class="sr-only">Aurora</span>
+                                </button>
+                                <button type="button" class="theme-swatch theme-swatch--compact" data-theme-option="berry" aria-pressed="false" title="Berry" style="--swatch-gradient: linear-gradient(135deg, #e11d48, #a855f7);">
+                                    <span class="sr-only">Berry</span>
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -197,42 +207,58 @@
                 <div class="pt-5 border-t border-neutral-200">
                     <p class="text-sm font-semibold text-neutral-500 uppercase tracking-wide">Mode Warna</p>
                     <p class="text-sm text-neutral-600 mt-1">Dipilih: <span data-theme-label>Ocean</span></p>
-                    <div class="theme-panel__grid mt-4">
-                        <div class="flex flex-col items-center gap-2">
-                            <button type="button" class="theme-swatch theme-swatch--large is-active" data-theme-option="ocean" aria-pressed="true" title="Ocean" style="--swatch-gradient: linear-gradient(135deg, #2563eb, #0ea5e9);">
-                                <span class="sr-only">Ocean</span>
-                            </button>
-                            <span class="text-xs font-medium text-neutral-600">Ocean</span>
-                        </div>
-                        <div class="flex flex-col items-center gap-2">
-                            <button type="button" class="theme-swatch theme-swatch--large" data-theme-option="sunset" aria-pressed="false" title="Sunset" style="--swatch-gradient: linear-gradient(135deg, #f97316, #ec4899);">
-                                <span class="sr-only">Sunset</span>
-                            </button>
-                            <span class="text-xs font-medium text-neutral-600">Sunset</span>
-                        </div>
-                        <div class="flex flex-col items-center gap-2">
-                            <button type="button" class="theme-swatch theme-swatch--large" data-theme-option="forest" aria-pressed="false" title="Forest" style="--swatch-gradient: linear-gradient(135deg, #16a34a, #22d3ee);">
-                                <span class="sr-only">Forest</span>
-                            </button>
-                            <span class="text-xs font-medium text-neutral-600">Forest</span>
-                        </div>
-                        <div class="flex flex-col items-center gap-2">
-                            <button type="button" class="theme-swatch theme-swatch--large" data-theme-option="royal" aria-pressed="false" title="Royal" style="--swatch-gradient: linear-gradient(135deg, #7c3aed, #f472b6);">
-                                <span class="sr-only">Royal</span>
-                            </button>
-                            <span class="text-xs font-medium text-neutral-600">Royal</span>
-                        </div>
-                        <div class="flex flex-col items-center gap-2">
-                            <button type="button" class="theme-swatch theme-swatch--large" data-theme-option="aurora" aria-pressed="false" title="Aurora" style="--swatch-gradient: linear-gradient(135deg, #06b6d4, #a855f7);">
-                                <span class="sr-only">Aurora</span>
-                            </button>
-                            <span class="text-xs font-medium text-neutral-600">Aurora</span>
-                        </div>
-                        <div class="flex flex-col items-center gap-2">
-                            <button type="button" class="theme-swatch theme-swatch--large" data-theme-option="berry" aria-pressed="false" title="Berry" style="--swatch-gradient: linear-gradient(135deg, #e11d48, #a855f7);">
-                                <span class="sr-only">Berry</span>
-                            </button>
-                            <span class="text-xs font-medium text-neutral-600">Berry</span>
+                    <div class="mt-4" data-theme-dropdown>
+                        <button type="button" class="theme-toggle-button theme-toggle-button--mobile w-full justify-between" data-theme-toggle aria-haspopup="true" aria-expanded="false">
+                            <span class="flex items-center gap-2">
+                                <svg class="w-4 h-4 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 7h16M7 12h10M10 17h4" />
+                                </svg>
+                                <span class="text-sm font-semibold text-neutral-700">Pilih Mode Warna</span>
+                            </span>
+                            <span class="flex items-center gap-2">
+                                <span class="theme-toggle-indicator" data-theme-label>Ocean</span>
+                                <svg class="w-4 h-4 text-neutral-400" data-theme-toggle-icon fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M6 9l6 6 6-6" />
+                                </svg>
+                            </span>
+                        </button>
+                        <div class="theme-panel__grid mt-3 hidden" data-theme-panel role="menu" aria-label="Pilih mode warna versi mobile">
+                            <div class="flex flex-col items-center gap-2">
+                                <button type="button" class="theme-swatch theme-swatch--large is-active" data-theme-option="ocean" aria-pressed="true" title="Ocean" style="--swatch-gradient: linear-gradient(135deg, #2563eb, #0ea5e9);">
+                                    <span class="sr-only">Ocean</span>
+                                </button>
+                                <span class="text-xs font-medium text-neutral-600">Ocean</span>
+                            </div>
+                            <div class="flex flex-col items-center gap-2">
+                                <button type="button" class="theme-swatch theme-swatch--large" data-theme-option="sunset" aria-pressed="false" title="Sunset" style="--swatch-gradient: linear-gradient(135deg, #f97316, #ec4899);">
+                                    <span class="sr-only">Sunset</span>
+                                </button>
+                                <span class="text-xs font-medium text-neutral-600">Sunset</span>
+                            </div>
+                            <div class="flex flex-col items-center gap-2">
+                                <button type="button" class="theme-swatch theme-swatch--large" data-theme-option="forest" aria-pressed="false" title="Forest" style="--swatch-gradient: linear-gradient(135deg, #16a34a, #22d3ee);">
+                                    <span class="sr-only">Forest</span>
+                                </button>
+                                <span class="text-xs font-medium text-neutral-600">Forest</span>
+                            </div>
+                            <div class="flex flex-col items-center gap-2">
+                                <button type="button" class="theme-swatch theme-swatch--large" data-theme-option="royal" aria-pressed="false" title="Royal" style="--swatch-gradient: linear-gradient(135deg, #7c3aed, #f472b6);">
+                                    <span class="sr-only">Royal</span>
+                                </button>
+                                <span class="text-xs font-medium text-neutral-600">Royal</span>
+                            </div>
+                            <div class="flex flex-col items-center gap-2">
+                                <button type="button" class="theme-swatch theme-swatch--large" data-theme-option="aurora" aria-pressed="false" title="Aurora" style="--swatch-gradient: linear-gradient(135deg, #06b6d4, #a855f7);">
+                                    <span class="sr-only">Aurora</span>
+                                </button>
+                                <span class="text-xs font-medium text-neutral-600">Aurora</span>
+                            </div>
+                            <div class="flex flex-col items-center gap-2">
+                                <button type="button" class="theme-swatch theme-swatch--large" data-theme-option="berry" aria-pressed="false" title="Berry" style="--swatch-gradient: linear-gradient(135deg, #e11d48, #a855f7);">
+                                    <span class="sr-only">Berry</span>
+                                </button>
+                                <span class="text-xs font-medium text-neutral-600">Berry</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1579,6 +1605,84 @@
 
             const themeButtons = document.querySelectorAll('[data-theme-option]');
             const themeLabels = document.querySelectorAll('[data-theme-label]');
+            const themeDropdownStates = [];
+
+            const closeDropdown = (state, { focusToggle = false } = {}) => {
+                if (!state) return;
+
+                state.dropdown.classList.remove('is-open');
+                state.panel.classList.add('hidden');
+                state.panel.setAttribute('aria-hidden', 'true');
+                state.toggle.setAttribute('aria-expanded', 'false');
+
+                if (focusToggle) {
+                    state.toggle.focus();
+                }
+            };
+
+            const openDropdown = (state) => {
+                if (!state) return;
+
+                state.dropdown.classList.add('is-open');
+                state.panel.classList.remove('hidden');
+                state.panel.setAttribute('aria-hidden', 'false');
+                state.toggle.setAttribute('aria-expanded', 'true');
+            };
+
+            document.querySelectorAll('[data-theme-dropdown]').forEach((dropdown) => {
+                const toggle = dropdown.querySelector('[data-theme-toggle]');
+                const panel = dropdown.querySelector('[data-theme-panel]');
+
+                if (!toggle || !panel) {
+                    return;
+                }
+
+                panel.classList.add('hidden');
+                panel.setAttribute('aria-hidden', 'true');
+                toggle.setAttribute('aria-expanded', 'false');
+
+                const state = { dropdown, toggle, panel };
+
+                toggle.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    event.stopPropagation();
+
+                    const isOpen = dropdown.classList.contains('is-open');
+
+                    themeDropdownStates.forEach((otherState) => {
+                        if (otherState !== state) {
+                            closeDropdown(otherState);
+                        }
+                    });
+
+                    if (isOpen) {
+                        closeDropdown(state);
+                    } else {
+                        openDropdown(state);
+                    }
+                });
+
+                dropdown.addEventListener('keydown', (event) => {
+                    if (event.key === 'Escape' && dropdown.classList.contains('is-open')) {
+                        event.preventDefault();
+                        closeDropdown(state, { focusToggle: true });
+                    }
+                });
+
+                panel.addEventListener('click', (event) => {
+                    event.stopPropagation();
+                });
+
+                themeDropdownStates.push(state);
+            });
+
+            document.addEventListener('click', (event) => {
+                themeDropdownStates.forEach((state) => {
+                    if (state.dropdown.classList.contains('is-open') && !state.dropdown.contains(event.target)) {
+                        closeDropdown(state);
+                    }
+                });
+            });
 
             const themes = {
                 ocean: { label: 'Ocean' },
@@ -1630,6 +1734,12 @@
             themeButtons.forEach((button) => {
                 button.addEventListener('click', () => {
                     applyTheme(button.dataset.themeOption);
+
+                    themeDropdownStates.forEach((state) => {
+                        if (state.panel.contains(button)) {
+                            closeDropdown(state);
+                        }
+                    });
                 });
             });
         });
