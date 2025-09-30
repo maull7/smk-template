@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Kompetensi Keahlian - SMKS Habibi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                            950: '#172554'
+                        },
+                        secondary: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
+                            950: '#052e16'
+                        },
+                        accent: {
+                            50: '#fdf4ff',
+                            100: '#fae8ff',
+                            200: '#f5d0fe',
+                            300: '#f0abfc',
+                            400: '#e879f9',
+                            500: '#d946ef',
+                            600: '#c026d3',
+                            700: '#a21caf',
+                            800: '#86198f',
+                            900: '#701a75',
+                            950: '#4a044e'
+                        },
+                        neutral: {
+                            50: '#f9fafb',
+                            100: '#f3f4f6',
+                            200: '#e5e7eb',
+                            300: '#d1d5db',
+                            400: '#9ca3af',
+                            500: '#6b7280',
+                            600: '#4b5563',
+                            700: '#374151',
+                            800: '#1f2937',
+                            900: '#111827',
+                            950: '#030712'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-neutral-50" data-theme="ocean">
+    <nav class="bg-neutral-50 shadow-sm sticky top-0 z-50 border-b border-neutral-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center shadow-lg">
+                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a1 1 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
+                        </svg>
+                    </div>
+                    <span class="text-xl font-bold text-neutral-900">SMKS Habibi</span>
+                </div>
+
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="index.html#beranda" class="text-neutral-700 hover:text-primary-600 font-medium transition-colors duration-200">Beranda</a>
+                    <a href="index.html#tentang" class="text-neutral-700 hover:text-primary-600 font-medium transition-colors duration-200">Tentang Kami</a>
+                    <a href="index.html#jurusan" class="text-primary-600 font-semibold transition-colors duration-200">Jurusan</a>
+                    <a href="index.html#fasilitas" class="text-neutral-700 hover:text-primary-600 font-medium transition-colors duration-200">Fasilitas</a>
+                    <a href="index.html#kontak" class="text-neutral-700 hover:text-primary-600 font-medium transition-colors duration-200">Kontak</a>
+                    <a href="index.html#news" class="text-neutral-700 hover:text-primary-600 font-medium transition-colors duration-200">Berita</a>
+                </div>
+
+                <div class="hidden lg:flex items-center">
+                    <div class="relative" data-theme-dropdown>
+                        <button type="button" class="theme-toggle-button" data-theme-toggle aria-haspopup="true" aria-expanded="false">
+                            <span class="theme-switcher-label">Mode</span>
+                            <span class="theme-toggle-indicator" data-theme-label>Ocean</span>
+                            <svg class="w-4 h-4 text-neutral-400" data-theme-toggle-icon fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M6 9l6 6 6-6" />
+                            </svg>
+                        </button>
+                        <div class="theme-dropdown-panel hidden absolute right-0 mt-3" data-theme-panel role="menu" aria-label="Pilih mode warna">
+                            <p class="text-[0.65rem] font-semibold text-neutral-500 uppercase tracking-[0.18em] mb-2">Pilih Mode Warna</p>
+                            <div class="grid grid-cols-3 gap-2">
+                                <button type="button" class="theme-swatch theme-swatch--compact is-active" data-theme-option="ocean" aria-pressed="true" title="Ocean" style="--swatch-gradient: linear-gradient(135deg, #2563eb, #0ea5e9);">
+                                    <span class="sr-only">Ocean</span>
+                                </button>
+                                <button type="button" class="theme-swatch theme-swatch--compact" data-theme-option="sunset" aria-pressed="false" title="Sunset" style="--swatch-gradient: linear-gradient(135deg, #f97316, #ec4899);">
+                                    <span class="sr-only">Sunset</span>
+                                </button>
+                                <button type="button" class="theme-swatch theme-swatch--compact" data-theme-option="forest" aria-pressed="false" title="Forest" style="--swatch-gradient: linear-gradient(135deg, #16a34a, #22d3ee);">
+                                    <span class="sr-only">Forest</span>
+                                </button>
+                                <button type="button" class="theme-swatch theme-swatch--compact" data-theme-option="royal" aria-pressed="false" title="Royal" style="--swatch-gradient: linear-gradient(135deg, #7c3aed, #f472b6);">
+                                    <span class="sr-only">Royal</span>
+                                </button>
+                                <button type="button" class="theme-swatch theme-swatch--compact" data-theme-option="aqua" aria-pressed="false" title="Aqua" style="--swatch-gradient: linear-gradient(135deg, #06b6d4, #8b5cf6);">
+                                    <span class="sr-only">Aqua</span>
+                                </button>
+                                <button type="button" class="theme-swatch theme-swatch--compact" data-theme-option="berry" aria-pressed="false" title="Berry" style="--swatch-gradient: linear-gradient(135deg, #e11d48, #a855f7);">
+                                    <span class="sr-only">Berry</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-button" class="theme-toggle-button" aria-expanded="false" aria-controls="mobile-menu">
+                        <span class="sr-only">Buka menu</span>
+                        <svg class="w-5 h-5" data-icon="menu" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg class="w-5 h-5 hidden" data-icon="close" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="lg:hidden hidden border-t border-neutral-200 bg-white">
+            <div class="px-4 py-6 space-y-4">
+                <a href="index.html#beranda" class="block text-neutral-700 font-medium">Beranda</a>
+                <a href="index.html#tentang" class="block text-neutral-700 font-medium">Tentang Kami</a>
+                <a href="index.html#jurusan" class="block text-primary-600 font-semibold">Jurusan</a>
+                <a href="index.html#fasilitas" class="block text-neutral-700 font-medium">Fasilitas</a>
+                <a href="index.html#kontak" class="block text-neutral-700 font-medium">Kontak</a>
+                <a href="index.html#news" class="block text-neutral-700 font-medium">Berita</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="relative overflow-hidden bg-gradient-to-br from-primary-600 via-primary-700 to-neutral-900 text-white">
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1400&q=80')] opacity-20 bg-cover bg-center"></div>
+        <div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+            <div class="flex items-center space-x-2 text-sm text-primary-100 mb-4">
+                <a href="index.html#jurusan" class="hover:text-white">Jurusan</a>
+                <span>/</span>
+                <span>Otomatisasi Tata Kelola Perkantoran</span>
+            </div>
+            <span class="inline-flex items-center px-4 py-1.5 rounded-full bg-white/10 text-sm font-medium mb-4">Terakreditasi A</span>
+            <h1 class="text-3xl lg:text-5xl font-bold leading-tight mb-6">Otomatisasi Tata Kelola Perkantoran (OTKP)</h1>
+            <p class="text-lg lg:text-xl text-white/80 max-w-3xl">Mempersiapkan calon profesional administrasi modern yang adaptif terhadap teknologi dan siap menghadapi tuntutan industri jasa perkantoran.</p>
+            <div class="mt-8 flex flex-wrap items-center gap-6 text-sm text-white/80">
+                <div class="flex items-center space-x-2">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M10 2a8 8 0 100 16 8 8 0 000-16zm3.54 5.46a.75.75 0 010 1.06l-4.24 4.24a.75.75 0 01-1.06 0L6.46 11a.75.75 0 111.06-1.06l1.27 1.27 3.71-3.71a.75.75 0 011.06 0z"/>
+                    </svg>
+                    <span>Kurikulum Merdeka</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                    </svg>
+                    <span>Kerjasama 25+ perusahaan</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm9 3a1 1 0 110 2h-1a1 1 0 110-2h1zm-5 0a1 1 0 110 2H7a1 1 0 110-2h1zm-1 4h8a1 1 0 010 2H7a1 1 0 010-2zm0 3h5a1 1 0 110 2H7a1 1 0 110-2z"/>
+                    </svg>
+                    <span>Praktik kerja industri minimal 6 bulan</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="py-16 lg:py-24 bg-neutral-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+            <section class="grid lg:grid-cols-[1.6fr,1fr] gap-12">
+                <div class="space-y-8">
+                    <h2 class="text-2xl font-bold text-neutral-900">Profil Kompetensi</h2>
+                    <p class="text-lg text-neutral-700 leading-relaxed">Program Otomatisasi Tata Kelola Perkantoran (OTKP) dirancang untuk menghasilkan lulusan dengan kemampuan administrasi yang unggul, penguasaan perangkat lunak perkantoran, kemampuan komunikasi bisnis, serta pemahaman tentang tata kelola organisasi.</p>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="bg-white rounded-3xl border border-neutral-200 shadow-lg p-6 space-y-3">
+                            <h3 class="text-xl font-semibold text-neutral-900">Keunggulan Program</h3>
+                            <ul class="space-y-2 text-neutral-600 text-sm leading-relaxed">
+                                <li>✔️ Modul belajar berbasis proyek nyata.</li>
+                                <li>✔️ Pelatihan sertifikasi administrasi digital.</li>
+                                <li>✔️ Penguatan soft skills dan etika profesi.</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white rounded-3xl border border-neutral-200 shadow-lg p-6 space-y-3">
+                            <h3 class="text-xl font-semibold text-neutral-900">Fasilitas Pendukung</h3>
+                            <ul class="space-y-2 text-neutral-600 text-sm leading-relaxed">
+                                <li>💻 Laboratorium komputer modern.</li>
+                                <li>🗂️ Ruang simulasi kantor.</li>
+                                <li>🤝 Studio layanan pelanggan.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-3xl border border-neutral-200 shadow-lg p-6 space-y-4">
+                    <h3 class="text-lg font-semibold text-neutral-900">Profil Lulusan</h3>
+                    <ul class="space-y-3 text-neutral-600">
+                        <li class="flex items-start space-x-3">
+                            <span class="mt-1 w-2 h-2 rounded-full bg-primary-500"></span>
+                            <span>Staf administrasi profesional di perusahaan nasional maupun multinasional.</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <span class="mt-1 w-2 h-2 rounded-full bg-primary-500"></span>
+                            <span>Customer relation officer dan resepsionis eksekutif.</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <span class="mt-1 w-2 h-2 rounded-full bg-primary-500"></span>
+                            <span>Wirausaha layanan administrasi dan event organizer.</span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="grid lg:grid-cols-2 gap-12">
+                <div class="bg-white rounded-3xl border border-neutral-200 shadow-lg p-8 space-y-6">
+                    <h2 class="text-2xl font-bold text-neutral-900">Struktur Kurikulum</h2>
+                    <ul class="space-y-4 text-neutral-700 leading-relaxed">
+                        <li><strong>Dasar-dasar Administrasi Perkantoran:</strong> pengantar manajemen arsip, tata naskah dinas, dan penggunaan aplikasi perkantoran.</li>
+                        <li><strong>Pengelolaan Keuangan dan Akuntansi Dasar:</strong> penyusunan laporan keuangan sederhana serta pengelolaan kas.</li>
+                        <li><strong>Layanan Pelanggan dan Komunikasi Bisnis:</strong> membangun citra perusahaan melalui pelayanan prima.</li>
+                        <li><strong>Proyek Kreatif Kewirausahaan:</strong> siswa merancang proyek bisnis jasa administratif yang dipresentasikan di akhir tahun.</li>
+                    </ul>
+                </div>
+                <div class="space-y-6">
+                    <div class="bg-primary-600 text-white rounded-3xl p-8 space-y-4">
+                        <h3 class="text-2xl font-semibold">Program Magang Industri</h3>
+                        <p class="text-white/80 leading-relaxed">Siswa menjalani praktik kerja industri selama minimal 6 bulan di perusahaan mitra seperti TechCorp, Nusantara Finance, dan Smart Office Solution untuk memahami alur kerja profesional.</p>
+                        <div class="grid grid-cols-3 gap-3 text-center text-sm">
+                            <div class="bg-white/10 rounded-2xl py-3">
+                                <p class="font-semibold">25+</p>
+                                <p class="text-white/70">Mitra</p>
+                            </div>
+                            <div class="bg-white/10 rounded-2xl py-3">
+                                <p class="font-semibold">6 Bulan</p>
+                                <p class="text-white/70">Durasi</p>
+                            </div>
+                            <div class="bg-white/10 rounded-2xl py-3">
+                                <p class="font-semibold">90%</p>
+                                <p class="text-white/70">Serapan kerja</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-3xl border border-neutral-200 shadow-lg p-8 space-y-4">
+                        <h3 class="text-xl font-semibold text-neutral-900">Sertifikasi yang Diperoleh</h3>
+                        <ul class="space-y-3 text-neutral-700 text-sm leading-relaxed">
+                            <li>Sertifikat Kompetensi Administrasi Perkantoran (BNSP).</li>
+                            <li>Sertifikasi Microsoft Office Specialist.</li>
+                            <li>Pelatihan komunikasi bisnis dan front office.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="grid lg:grid-cols-2 gap-12">
+                <div class="space-y-6">
+                    <h2 class="text-2xl font-bold text-neutral-900">Kegiatan Unggulan</h2>
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=800&q=80" alt="Kegiatan administrasi" class="rounded-2xl object-cover h-48 w-full">
+                        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Pelatihan komunikasi" class="rounded-2xl object-cover h-48 w-full">
+                    </div>
+                    <p class="text-neutral-700 leading-relaxed">Siswa mengikuti lomba administrasi perkantoran, simulasi rapat direksi, dan program wirausaha sekolah yang bekerja sama dengan UMKM binaan.</p>
+                </div>
+                <div class="bg-neutral-900 text-white rounded-3xl p-8 space-y-6">
+                    <h3 class="text-2xl font-semibold">Testimoni Alumni</h3>
+                    <p class="text-white/80 leading-relaxed">"Pengalaman magang saya di perusahaan multinasional menjadi pintu masuk karier profesional. SMKS Habibi membekali saya dengan kemampuan komunikasi bisnis dan penguasaan teknologi perkantoran yang relevan."</p>
+                    <div>
+                        <p class="font-semibold">Nadya Putri</p>
+                        <p class="text-sm text-white/70">Sekretaris Eksekutif di Smart Office Solution</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-white rounded-3xl border border-neutral-200 shadow-lg p-8 space-y-6">
+                <h2 class="text-2xl font-bold text-neutral-900">Prospek Melanjutkan Studi</h2>
+                <p class="text-neutral-700 leading-relaxed">Lulusan OTKP memiliki peluang besar melanjutkan studi ke perguruan tinggi dengan jurusan Administrasi Bisnis, Manajemen, Komunikasi, maupun Pendidikan Administrasi Perkantoran. Kami menyediakan bimbingan intensif untuk jalur SNBP dan SNBT.</p>
+                <div class="grid md:grid-cols-3 gap-4 text-sm text-neutral-600">
+                    <div class="p-4 rounded-2xl bg-primary-50 border border-primary-100">
+                        <p class="font-semibold text-primary-700">Administrasi Bisnis</p>
+                        <p>Universitas Negeri Jakarta, Politeknik Negeri Bandung.</p>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-secondary-50 border border-secondary-100">
+                        <p class="font-semibold text-secondary-700">Manajemen</p>
+                        <p>Universitas Indonesia, Universitas Multimedia Nusantara.</p>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-accent-50 border border-accent-100">
+                        <p class="font-semibold text-accent-700">Komunikasi Bisnis</p>
+                        <p>Universitas Padjadjaran, Telkom University.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="bg-primary-600 text-white rounded-3xl p-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+                <div class="space-y-4 max-w-2xl">
+                    <h2 class="text-3xl font-bold">Siap Menjadi Profesional Administrasi Masa Depan?</h2>
+                    <p class="text-white/80">Daftarkan diri Anda sekarang dan dapatkan pengalaman belajar terpadu bersama mentor industri.</p>
+                </div>
+                <div class="flex flex-wrap gap-4">
+                    <a href="index.html#kontak" class="inline-flex items-center px-6 py-3 rounded-xl bg-white text-primary-600 font-semibold hover:bg-neutral-100 transition">Hubungi Tim Admisi</a>
+                    <a href="index.html#news" class="inline-flex items-center px-6 py-3 rounded-xl bg-primary-500 text-white font-semibold hover:bg-primary-400 transition">Lihat Kegiatan Terbaru</a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="bg-neutral-900 text-white py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold">SMKS Habibi</h3>
+                    <p class="mt-2 text-white/70">Pendidikan berkualitas untuk generasi siap kerja dan berkarakter.</p>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold uppercase tracking-wide text-white/70">Alamat</h4>
+                    <p class="mt-2 text-white/80">Jl. Mawar No. 12, Kota Tangerang</p>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold uppercase tracking-wide text-white/70">Kontak</h4>
+                    <p class="mt-2 text-white/80">Email: admisi@smkshabibi.sch.id</p>
+                    <p class="text-white/80">Telepon: +62 21 1234 5678</p>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold uppercase tracking-wide text-white/70">Ikuti Kami</h4>
+                    <div class="mt-2 flex gap-3">
+                        <a href="#" class="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center hover:bg-white/15">
+                            <span class="sr-only">Instagram</span>
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M7 2a5 5 0 00-5 5v6a5 5 0 005 5h6a5 5 0 005-5V7a5 5 0 00-5-5H7zm0 2h6a3 3 0 013 3v6a3 3 0 01-3 3H7a3 3 0 01-3-3V7a3 3 0 013-3zm8 1a1 1 0 100 2 1 1 0 000-2zM10 7a3 3 0 100 6 3 3 0 000-6z"/></svg>
+                        </a>
+                        <a href="#" class="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center hover:bg-white/15">
+                            <span class="sr-only">Facebook</span>
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M18 10a8 8 0 10-9.25 7.9v-5.59H6.3V10h2.45V8.1c0-2.42 1.46-3.76 3.69-3.76 1.07 0 2.2.19 2.2.19v2.42h-1.24c-1.22 0-1.6.76-1.6 1.54V10h2.72l-.43 2.31h-2.29v5.59A8 8 0 0018 10z"/></svg>
+                        </a>
+                        <a href="#" class="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center hover:bg-white/15">
+                            <span class="sr-only">YouTube</span>
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 3c-2.173 0-6.5.178-7.778.556C1.023 3.863.5 5.21.5 10s.523 6.137 1.722 6.444C3.5 16.822 7.827 17 10 17s6.5-.178 7.778-.556C18.977 16.137 19.5 14.79 19.5 10s-.523-6.137-1.722-6.444C16.5 3.178 12.173 3 10 3zm-2 4l6 3-6 3V7z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 pt-6 border-t border-white/10 text-sm text-white/60 flex flex-col sm:flex-row justify-between">
+                <p>© <span id="year"></span> SMKS Habibi. All rights reserved.</p>
+                <p>Didesain dengan ❤️ untuk pendidikan yang lebih baik.</p>
+            </div>
+        </div>
+        <script>
+            document.getElementById('year').textContent = new Date().getFullYear();
+        </script>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (menuButton && mobileMenu) {
+                const openIcon = menuButton.querySelector('[data-icon="menu"]');
+                const closeIcon = menuButton.querySelector('[data-icon="close"]');
+
+                const toggleMenu = (show) => {
+                    menuButton.setAttribute('aria-expanded', String(show));
+                    mobileMenu.classList.toggle('hidden', !show);
+
+                    if (openIcon) {
+                        openIcon.classList.toggle('hidden', show);
+                    }
+
+                    if (closeIcon) {
+                        closeIcon.classList.toggle('hidden', !show);
+                    }
+                };
+
+                menuButton.addEventListener('click', () => {
+                    const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+                    toggleMenu(!isExpanded);
+                });
+
+                mobileMenu.querySelectorAll('a, button').forEach((item) => {
+                    item.addEventListener('click', () => {
+                        if (window.innerWidth < 768) {
+                            toggleMenu(false);
+                        }
+                    });
+                });
+            }
+
+            const themeButtons = document.querySelectorAll('[data-theme-option]');
+            const themeLabels = document.querySelectorAll('[data-theme-label]');
+            const themeDropdownStates = [];
+
+            const closeDropdown = (state, { focusToggle = false } = {}) => {
+                if (!state) return;
+
+                state.dropdown.classList.remove('is-open');
+                state.panel.classList.add('hidden');
+                state.panel.setAttribute('aria-hidden', 'true');
+                state.toggle.setAttribute('aria-expanded', 'false');
+
+                if (focusToggle) {
+                    state.toggle.focus();
+                }
+            };
+
+            const openDropdown = (state) => {
+                if (!state) return;
+
+                state.dropdown.classList.add('is-open');
+                state.panel.classList.remove('hidden');
+                state.panel.setAttribute('aria-hidden', 'false');
+                state.toggle.setAttribute('aria-expanded', 'true');
+            };
+
+            document.querySelectorAll('[data-theme-dropdown]').forEach((dropdown) => {
+                const toggle = dropdown.querySelector('[data-theme-toggle]');
+                const panel = dropdown.querySelector('[data-theme-panel]');
+
+                if (!toggle || !panel) {
+                    return;
+                }
+
+                panel.classList.add('hidden');
+                panel.setAttribute('aria-hidden', 'true');
+
+                const dropdownState = { dropdown, toggle, panel };
+                themeDropdownStates.push(dropdownState);
+
+                toggle.addEventListener('click', () => {
+                    const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+
+                    themeDropdownStates.forEach((state) => {
+                        if (state !== dropdownState) {
+                            closeDropdown(state);
+                        }
+                    });
+
+                    if (isExpanded) {
+                        closeDropdown(dropdownState);
+                    } else {
+                        openDropdown(dropdownState);
+                    }
+                });
+
+                toggle.addEventListener('keydown', (event) => {
+                    if (event.key === 'Escape') {
+                        closeDropdown(dropdownState, { focusToggle: true });
+                    }
+                });
+            });
+
+            const setTheme = (theme) => {
+                document.body.setAttribute('data-theme', theme);
+                localStorage.setItem('preferredTheme', theme);
+
+                themeButtons.forEach((button) => {
+                    const isActive = button.getAttribute('data-theme-option') === theme;
+                    button.classList.toggle('is-active', isActive);
+                    button.setAttribute('aria-pressed', String(isActive));
+                });
+
+                themeLabels.forEach((label) => {
+                    label.textContent = theme.charAt(0).toUpperCase() + theme.slice(1);
+                });
+            };
+
+            const savedTheme = localStorage.getItem('preferredTheme') || 'ocean';
+            setTheme(savedTheme);
+
+            themeButtons.forEach((button) => {
+                button.addEventListener('click', () => {
+                    const theme = button.getAttribute('data-theme-option');
+                    setTheme(theme);
+
+                    themeDropdownStates.forEach((state) => closeDropdown(state));
+                });
+            });
+
+            document.addEventListener('click', (event) => {
+                themeDropdownStates.forEach((state) => {
+                    if (!state.dropdown.contains(event.target)) {
+                        closeDropdown(state);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
